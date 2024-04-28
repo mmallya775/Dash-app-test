@@ -69,7 +69,7 @@ def update_fig(xaxis_column_name, yaxis_column_name,
                      y=dff[dff['Indicator Name'] == yaxis_column_name]['Value'],
                      hover_name=dff[dff['Indicator Name'] == yaxis_column_name]['Country Name'])
     fig.update_layout(margin={'l': 40, 'b': 40, 't': 10, 'r': 0}, hovermode='closest')
-    fig.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0)'})
+    fig.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0.05)'})
 
     fig.update_xaxes(title=xaxis_column_name,
                      type='linear' if xaxis_type == 'Linear' else 'log')

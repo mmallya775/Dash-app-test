@@ -9,6 +9,7 @@ df = pd.read_csv(filepath_or_buffer=url)
 app = Dash(__name__)
 
 app.layout = html.Div([
+    html.Title("My Dash App"),
     html.Div([
         html.H1(children="Scatter Plot", style={'margin':'3px 2px'}),
         html.Div([
@@ -69,6 +70,7 @@ def update_fig(xaxis_column_name, yaxis_column_name,
                      y=dff[dff['Indicator Name'] == yaxis_column_name]['Value'],
                      hover_name=dff[dff['Indicator Name'] == yaxis_column_name]['Country Name'])
     fig.update_layout(margin={'l': 40, 'b': 40, 't': 10, 'r': 0}, hovermode='closest')
+    fig.update_layout(xaxis=dict(showgrid=False), yaxis=dict(showgrid=False))
     fig.update_layout({'plot_bgcolor': 'rgba(0, 0, 0, 0.05)'})
 
     fig.update_xaxes(title=xaxis_column_name,

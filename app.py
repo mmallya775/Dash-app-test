@@ -6,10 +6,9 @@ url= 'https://plotly.github.io/datasets/country_indicators.csv'
 
 df = pd.read_csv(filepath_or_buffer=url)
 
-app = Dash(__name__)
+app = Dash(__name__, title='My Dash App')
 
 app.layout = html.Div([
-    html.Title("My Dash App"),
     html.Div([
         html.H1(children="Scatter Plot", style={'margin':'3px 2px'}),
         html.Div([

@@ -79,5 +79,7 @@ def update_fig(xaxis_column_name, yaxis_column_name,
 
     return fig
 
+server = app.server
+
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run_server(debug=True)
